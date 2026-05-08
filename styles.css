@@ -1,53 +1,438 @@
-body{
-    background-color: #252525;
-    color: #F5F5F5;
+:root {
+    --bg-color: #F5F5F5;
+    --text-color: #1A1A1A;
+    --accent-color: #555555;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --cursor-size: 20px;
 }
 
-img
-{
-    border-radius: 100%;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.landingpage{
-    background-color: #252525;
+html {
+    scroll-behavior: initial; /* Lenis handles smooth scrolling */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+    width: 60px;
+    height: 60px;
+    background-color: var(--text-color);
+    opacity: 0.2;
+    border: none;
+}
+
+/* Typography & Links */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: none; /* Managed by custom cursor */
+}
+
+.inline-link {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+    color: var(--accent-color);
+}
+
+/* Layout */
+.section {
+    padding: 100px 5vw;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 1rem;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem 5vw;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: var(--bg-color);
+}
+
+nav {
     display: flex;
-    flex-wrap: nowrap;
-    height: 350px;
-}
-
-
-.landingpage .sq{
-    display: flex;
-    width: 300px;
-    height: 300px;
-    margin-top: 50px;
-    margin-left: 50px;
-}
-
-/*.landingpage > .sq > img{
-    align-self: center;
-}*/
-
-.landingpage .box2{
-    margin-top: 50px;
-    margin-left: 50px;
-    display: grid;
-    height: 250px;
+    justify-content: space-between;
     align-items: center;
 }
 
-.br
-{
-    background-color: red;
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.landingpage > .box2 > .g1 > h1{
-    margin: 0px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
 }
 
-.landingpage > .box2 > p{
-    margin: 0%;
+.nav-links a {
+    color: var(--bg-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 150px;
+}
+
+.hero-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 6rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    max-width: 80%;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+/* Education (Grid List) */
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.list-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.list-item p {
+    color: var(--accent-color);
+}
+
+/* Experience (Hover to Reveal) */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    position: relative;
+    transition: padding-left 0.3s ease;
+}
+
+.experience-row:hover {
+    padding-left: 2rem;
+}
+
+.experience-info {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.experience-info .year {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    min-width: 120px;
+}
+
+.experience-info h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.experience-info p {
+    color: var(--accent-color);
+    margin-left: 2rem;
+}
+
+/* Hover reveal image logic */
+.hover-reveal-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hover-reveal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* We will handle the reveal via JS to follow the cursor, but here is a simple CSS fallback */
+.experience-row:hover .hover-reveal-img.css-fallback {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Hobbies */
+.hobbies-list {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.hobbies-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+/* Contact CTA */
+.contact-cta {
+    text-align: center;
+    padding: 150px 5vw;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.7;
+}
+
+.contact-link h2 {
+    font-size: 4rem;
+}
+
+.contact-link .arrow {
+    font-size: 4rem;
+    font-family: var(--font-body);
+}
+
+/* Forms (for contact.html) */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color);
+}
+
+.submit-btn {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    padding: 1rem 3rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    cursor: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .experience-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .experience-info p {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--text-color);
+        padding: 2rem;
+        align-items: center;
+        display: none; /* Can be toggled with JS, but for simplicity we'll just stack them on smaller screens, wait let's just make them wrap */
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: static;
+        width: auto;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .experience-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-link h2 {
+        font-size: 2.5rem;
+    }
+    .contact-link .arrow {
+        font-size: 2.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
