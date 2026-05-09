@@ -1,106 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>✌ DIVI's personal site</title>
-    <!-- Start cookieyes banner -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyesh Ashok | Portfolio</title>
+    <!-- Cookieyes banner -->
     <script id="cookieyes" type="text/javascript" src="https://cdn-staging.cookieyes.com/client_data/6c71622ce93edcc1428477a623321dc6/script.js"></script>
-    <!-- End cookieyes banner -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <table cellspacing="20">
-      <div class = "landingpage">
-          <div class="sq"><img src="images/web1.jpg" alt="just my image""></div>
-          <div class="box2">
-            <div class="g1"><h1>Divyesh Ashok</h1></div>
-            <p>a <em>student</em> of <strong>RIT</strong></p>
-            <p><em>just a newbie to html....</em></p>
-            <p>I am a student of <strong><a href="http://www.rit.ac.in/#:~:text=Rajiv%20Gandhi%20Institute%20of%20Technology%2C%20named%20after%20the%20late%20Prime,leading%20technical%20Institutes%20in%20Kerala.">Rajiv Gandhi institute of technology</a></strong>. A 3rd year undergraduate in the <em><a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a></em> department. I study web development at <a href="https://www.udemy.com/?deal_code=&utm_term=Homepage&utm_content=Textlink&utm_campaign=Rakuten-default&ranMID=39197&ranEAID=%2F68Yt01SgtI&ranSiteID=_68Yt01SgtI-81zfUGIOUA4IozrnmcOB5w&LSNPUBID=%2F68Yt01SgtI&utm_source=aff-campaign&utm_medium=udemyads">udemy</a> as a hobby.</p>
-          </div>
-      </div>
-    </table>
-    <hr size="5" noshade>
-    <h3>EDUCATION:</h3>
-    <ul>
-     <li><strong><a href="https://stpiuskuttikanam.com/">St.pius</strong> X eng school</a></li>
-     <li><strong><a href="http://careschool.in/">CARE</strong> international school</a></li>
-     <li><strong><a href="http://www.rit.ac.in/#:~:text=Rajiv%20Gandhi%20Institute%20of%20Technology%2C%20named%20after%20the%20late%20Prime,leading%20technical%20Institutes%20in%20Kerala.">Rajiv Gandhi</strong> institute of technology</a></li>
-    </ul>
-    <hr>
-    <h3>MY HOBBIES:</h3>
-    <ol type="i">
-      <li>Binge movies.</li>
-      <li>Binge watch web series.</li>
-      <li>Travel.</li>
-      <li>Explore.</li>
-    </ol>
-    <hr>
-    <h3>Coding Experience</h3>
-    <table cellspacing="40">
-      <thead>
-        <th>Exposure</th>
-        <th>subjects</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2017-2019</td>
-          <td>Basics in <em>java</em> Programming</td>
-        </tr>
-        <tr>
-          <td>2019-2021</td>
-          <td><em>Python</em> front end and back-end development</td>
-        </tr>
-        <tr>
-          <td>2021-2022</td>
-          <td>C programming</td>
-        </tr>
-        <tr>
-          <td>2022-....</td>
-          <td>Web development</td>
-        </tr>
-      </tbody>
-      <tfoot>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
 
-      </tfoot>
-    </table>
-    <br>
-    <hr size="2" noshade>
-    <a href="contact.html">
-      <img src="images/contact.jpg" alt="Contact me">
-    </a>
-    <h3>My Coding SKILLS</h3>
-    <table border="1">
-      <tr>
-        <td><table>
-          <tr>
-            <td>Java</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>python</td>
-            <td>⭐⭐⭐⭐</td>
-          </tr>
-        </table></td>
-        <td><table>
-          <tr>
-            <td>C programming</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Web development</td>
-            <td>⭐</td>
-          </tr>
-        </table></td>
-      </tr>
-    </table>
-  </body>
+    <header class="header fade-in">
+        <nav>
+            <div class="logo">DIVI</div>
+            <ul class="nav-links">
+                <li><a href="#about" class="hover-target">About</a></li>
+                <li><a href="#education" class="hover-target">Education</a></li>
+                <li><a href="#experience" class="hover-target">Experience</a></li>
+                <li><a href="contact.html" class="hover-target">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="lenis-container">
+        <!-- Hero Section -->
+        <section class="hero section" id="about">
+            <div class="hero-content fade-in">
+                <p class="hero-subtitle">Student at RIT & Web Developer</p>
+                <h1 class="hero-title">Divyesh Ashok</h1>
+                <p class="hero-description">
+                    I am an undergraduate in the Computer Science department at <a href="http://www.rit.ac.in/" class="hover-target inline-link" target="_blank">Rajiv Gandhi Institute of Technology</a>. Exploring web development as a passion and creating digital experiences.
+                </p>
+            </div>
+            <div class="hero-image-wrapper fade-in">
+                <img src="images/web1.jpg" alt="Divyesh Ashok" class="hero-image hover-reveal">
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education section fade-in" id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="grid-list">
+                <div class="list-item">
+                    <h3>Rajiv Gandhi Institute of Technology</h3>
+                    <p>Computer Science</p>
+                </div>
+                <div class="list-item">
+                    <h3>CARE International School</h3>
+                    <p>High School</p>
+                </div>
+                <div class="list-item">
+                    <h3>St. Pius X Eng School</h3>
+                    <p>Primary & Middle School</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Skills Section -->
+        <section class="experience section fade-in" id="experience">
+            <h2 class="section-title">Coding Experience</h2>
+            <div class="experience-list">
+                <div class="experience-row hover-reveal-container hover-target">
+                    <div class="experience-info">
+                        <span class="year">2022 - Present</span>
+                        <h3>Web Development</h3>
+                        <p>Focusing on modern front-end and full-stack technologies.</p>
+                    </div>
+                    <div class="hover-reveal-img"><img src="images/web1.jpg" alt="Web Dev"></div>
+                </div>
+
+                <div class="experience-row hover-reveal-container hover-target">
+                    <div class="experience-info">
+                        <span class="year">2021 - 2022</span>
+                        <h3>C Programming</h3>
+                        <p>Mastering core computer science concepts.</p>
+                    </div>
+                    <div class="hover-reveal-img"><img src="images/web1.jpg" alt="C Programming"></div>
+                </div>
+
+                <div class="experience-row hover-reveal-container hover-target">
+                    <div class="experience-info">
+                        <span class="year">2019 - 2021</span>
+                        <h3>Python Development</h3>
+                        <p>Front-end and back-end development with Python.</p>
+                    </div>
+                    <div class="hover-reveal-img"><img src="images/web1.jpg" alt="Python"></div>
+                </div>
+
+                <div class="experience-row hover-reveal-container hover-target">
+                    <div class="experience-info">
+                        <span class="year">2017 - 2019</span>
+                        <h3>Java Programming</h3>
+                        <p>Basics of object-oriented programming.</p>
+                    </div>
+                    <div class="hover-reveal-img"><img src="images/web1.jpg" alt="Java"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="hobbies section fade-in" id="hobbies">
+            <h2 class="section-title">Hobbies</h2>
+            <ul class="hobbies-list">
+                <li>Binge watching movies & web series</li>
+                <li>Traveling & Exploring</li>
+                <li>Studying web development on <a href="https://www.udemy.com/" target="_blank" class="hover-target inline-link">Udemy</a></li>
+            </ul>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta section fade-in">
+            <a href="contact.html" class="contact-link hover-target">
+                <h2>Let's create together</h2>
+                <span class="arrow">→</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
