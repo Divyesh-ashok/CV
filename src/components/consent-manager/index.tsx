@@ -1,0 +1,1 @@
+export { CookieYesRoot } from "./provider";
