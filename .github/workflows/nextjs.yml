@@ -24,6 +24,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+      - name: Authenticate with CodeArtifact
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: eu-west-1
+        run: |
+          TOKEN=$(aws codeartifact get-authorization-token \
+            --domain cookieyes \
+            --domain-owner 275032138359 \
+            --region eu-west-1 \
+            --query authorizationToken \
+            --output text)
+          npm config set @cookieyes:registry https://cookieyes-275032138359.d.codeartifact.eu-west-1.amazonaws.com/npm/consent-sdk-alpha/
+          npm config set //cookieyes-275032138359.d.codeartifact.eu-west-1.amazonaws.com/npm/consent-sdk-alpha/:_authToken "$TOKEN"
       - run: npm ci
       - run: npx next build
       - uses: actions/upload-pages-artifact@v3
